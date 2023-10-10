@@ -1,6 +1,6 @@
 # Ansible Role: Jenkins CI
 
-[![CI](https://github.com/shaneholloman-org/ansible-role-jenkins/actions/workflows/ci.yml/badge.svg)](https://github.com/shaneholloman-org/ansible-role-jenkins/actions/workflows/ci.yml)
+[![CI](https://github.com/shaneholloman/ansible-role-jenkins/actions/workflows/ci.yml/badge.svg)](https://github.com/shaneholloman/ansible-role-jenkins/actions/workflows/ci.yml)
 
 Installs Jenkins CI on RHEL/CentOS and Debian/Ubuntu servers.
 
@@ -91,7 +91,7 @@ The default repositories (listed below) can be overridden as well.
     # For RedHat/CentOS:
     jenkins_repo_url: https://pkg.jenkins.io/redhat{{ '-stable' if (jenkins_prefer_lts | bool) else '' }}/jenkins.repo
     jenkins_repo_key_url: https://pkg.jenkins.io/redhat{{ '-stable' if (jenkins_prefer_lts | bool) else '' }}/jenkins.io.key
-    
+
     # For Debian/Ubuntu:
     jenkins_repo_url: deb https://pkg.jenkins.io/debian{{ '-stable' if (jenkins_prefer_lts | bool) else '' }} binary/
     jenkins_repo_key_url: https://pkg.jenkins.io/debian{{ '-stable' if (jenkins_prefer_lts | bool) else '' }}/jenkins.io.key
@@ -137,7 +137,7 @@ None.
 ```yaml
 - hosts: jenkins
   become: true
-  
+
   vars:
     jenkins_hostname: jenkins.example.com
     java_packages:
@@ -157,4 +157,3 @@ MIT (Expat) / BSD
 ## Author Information
 
 This role was created in 2023
-
