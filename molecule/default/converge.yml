@@ -4,7 +4,8 @@
   become: true
 
   pre_tasks:
-    - include_tasks: debian-setup.yml
+    - name: Include Debian setup tasks
+      ansible.builtin.include_tasks: debian-setup.yml
       when: ansible_os_family == 'Debian'
 
   roles:
@@ -13,7 +14,7 @@
 
   post_tasks:
     - name: Check if Jenkins is running.
-      uri:
+      ansible.builtin.uri:
         url: "http://127.0.0.1:8080/"
         status_code:
           - 200
