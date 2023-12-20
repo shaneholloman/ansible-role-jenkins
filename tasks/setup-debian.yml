@@ -40,10 +40,10 @@
     deb: "/tmp/jenkins_{{ jenkins_version }}_all.deb"
     state: present
   when: jenkins_version is defined and specific_version.stat.exists
-  notify: configure default users
+  notify: Configure default users
 
 - name: Ensure Jenkins is installed.
   ansible.builtin.apt:
     name: jenkins
     state: "{{ jenkins_package_state }}"
-  notify: configure default users
+  notify: Configure default users
