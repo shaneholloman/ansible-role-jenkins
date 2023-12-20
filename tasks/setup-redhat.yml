@@ -1,4 +1,9 @@
 ---
+- name: Remove curl-minimal package before full curl install.
+  ansible.builtin.package:
+    name: curl-minimal
+    state: absent
+
 - name: Ensure dependencies are installed.
   ansible.builtin.package:
     name:
